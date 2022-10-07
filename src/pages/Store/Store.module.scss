@@ -1,0 +1,17 @@
+.store {
+    min-height: 100%;
+
+    &__title {
+        margin-block-end: 3rem;
+        font-size: 3rem;
+        font-weight: 700;
+        text-align: center;
+    }
+
+    &__content {
+        display: flex;
+        justify-content: space-between;
+        column-gap: 2rem;
+        min-height: 100%;
+    }
+}

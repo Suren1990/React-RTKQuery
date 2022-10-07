@@ -1,0 +1,23 @@
+.header {
+    padding: 1rem;
+    background-color: #00a2ff;
+}
+
+.nav {
+    display: flex;
+    justify-content: center;
+    column-gap: 2rem;
+
+    &__link {
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: rgba(255, 255, 255, 0.7);
+        transition: color .15s;
+
+        &:hover,
+        &_active {
+            color: rgb(255, 255, 255);
+        }
+    }
+}
+
