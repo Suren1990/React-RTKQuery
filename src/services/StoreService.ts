@@ -21,7 +21,19 @@ export const storeAPI = createApi({
                 url: `products/${id}`,
             })
         }),
+        getCategories: builder.query<string[], void>({
+            query: () => ({
+                url: `products/categories`,
+            })
+        }),
+        addNewProduct: builder.mutation<IProduct, IProduct>({
+            query: (product) => ({
+                url: `products`,
+                method: "POST",
+                body: product,
+            })
+        }),
     })
 })
 
-export const { useGetProductsQuery, useLazyGetSpecifilteredCategoryQuery, useGetCurrentProductQuery } = storeAPI;
+export const { useGetProductsQuery, useLazyGetSpecifilteredCategoryQuery, useGetCurrentProductQuery, useAddNewProductMutation, useGetCategoriesQuery } = storeAPI;

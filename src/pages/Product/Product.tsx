@@ -40,7 +40,7 @@ const Product = () => {
                             <div className={styles.product__info}>
                                 <h3 className={styles.product__title}>{product.title}</h3>
                                 <h4 className={styles.product__category}>Category: {product.category}</h4>
-                                <span className={styles.product__rate}>Rating: {product.rating.rate}</span>
+                                <span className={styles.product__rate}>Rating: {product?.rating?.rate}</span>
                                 <p className={styles.product__description}>{product.description}</p>
                                 <span className={styles.product__price}>Price: {product.price}</span>
                             </div>
