@@ -1,1 +1,42 @@
+.addProduct {
 
+    &__form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-inline-start: auto;
+        margin-inline-end: auto;
+        max-width: 25rem;
+    }
+
+    &__field {
+        width: 100%;
+        margin-block-end: 1rem;
+        padding: .5rem;
+        border-width: 1px;
+        border-radius: 5px;
+    }
+
+    &__textarea {
+        width: 100%;
+        height: 5rem;
+        margin-block-end: 1rem;
+        padding: .5rem;
+        border-radius: 5px;
+        resize: none;
+    }
+
+    &__btn {
+        padding: .5rem 1rem;
+        font-size: 1.2rem;
+        color: #fff;
+        background-color: #009df8;
+        border: none;
+        transition: background-color 240ms;
+        cursor: pointer;
+        
+        &:hover {
+            background-color: #006caa;
+        }
+    }
+}

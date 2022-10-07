@@ -2,6 +2,10 @@ html, body, #root, .App {
   height: 100%;
 }
 
+input, select, textarea {
+  box-sizing: border-box;
+}
+
 .container {
   max-width: 80rem;
   width: 100%;

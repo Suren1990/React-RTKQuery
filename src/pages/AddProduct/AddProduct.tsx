@@ -25,7 +25,7 @@ const AddProduct = () => {
         if (title && price && description && image && category) {
             await addProductMutation({
                 title,
-                price, 
+                price,
                 description,
                 image,
                 category,
@@ -34,29 +34,36 @@ const AddProduct = () => {
     }
 
     console.log(data);
-    
+
     return (
-        <div className={styles.addProduct}>
+        <div className={`${styles.addProduct} container`}>
             {
                 isLoading && <Loader />
             }
-            <form onSubmit={addProduct}>
+            <form
+                className={styles.addProduct__form}
+                onSubmit={addProduct}
+            >
                 <input
+                    className={styles.addProduct__field}
                     type="text"
                     value={title}
                     onChange={(e) => setTitle(e.target.value)}
                 />
                 <input
+                    className={styles.addProduct__field}
                     type="number"
                     value={price}
                     onChange={(e) => setPrice(Number(e.target.value))}
                 />
                 <input
+                    className={styles.addProduct__field}
                     type="text"
                     value={image}
                     onChange={(e) => setImage(e.target.value)}
                 />
                 <textarea
+                    className={styles.addProduct__textarea}
                     value={description}
                     onChange={(e) => setDescription(e.target.value)}
                 />
@@ -66,6 +73,7 @@ const AddProduct = () => {
                 {
                     categories && (
                         <select
+                            className={styles.addProduct__field}
                             value={'electronics'}
                             onChange={chooseCategory}
                         >
@@ -80,7 +88,10 @@ const AddProduct = () => {
                         </select>
                     )
                 }
-                <button type='submit'>Add Product</button>
+                <button
+                    className={styles.addProduct__btn}
+                    type='submit'
+                >Add Product</button>
             </form>
         </div>
     );
