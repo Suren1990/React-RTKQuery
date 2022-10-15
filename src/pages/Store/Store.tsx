@@ -10,7 +10,10 @@ const Store = () => {
     const [loading, setLoading] = useState(true);
     const [activeCategory, setActiveCategory] = useState<string>('All Products');
 
-    const { isError, isLoading, data } = useGetProductsQuery();
+    const { isError, isLoading, data } = useGetProductsQuery('some data for searched', {
+        // refetchOnFocus: true, // after few times refetch data again
+        // skip: length < 3, // if searching something it false it will not work  
+    });
     const [setCategory, { data: categoryData }] = useLazyGetSpecifilteredCategoryQuery();
 
     useEffect(() => {

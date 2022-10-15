@@ -5,8 +5,9 @@ export const storeAPI = createApi({
     reducerPath: 'storeAPI',
     tagTypes: ['products'],
     baseQuery: fetchBaseQuery({ baseUrl: 'https://fakestoreapi.com/' }),
+    refetchOnFocus: true,
     endpoints: (builder) => ({
-        getProducts: builder.query<IProduct[], void>({
+        getProducts: builder.query<IProduct[], string>({
             query: () => ({
                 url: 'products',
             })
