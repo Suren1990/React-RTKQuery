@@ -12,7 +12,13 @@ const Store = () => {
 
     const { isError, isLoading, data } = useGetProductsQuery('some data for searched', {
         // refetchOnFocus: true, // after few times refetch data again
-        // skip: length < 3, // if searching something it false it will not work  
+        // skip: length < 3, // if searching something it false it will not work
+        // pollingInterval: 1000, // Update datas after current times "1000 miliseconds"  
+        // selectFromResult: ({ isLoading, isError, data }) => ({
+        //     data: countCat ? data?.filter((item) => item.count === countCat) : data,
+        //     isLoading,
+        //     isError,
+        // }) // filtering data
     });
     const [setCategory, { data: categoryData }] = useLazyGetSpecifilteredCategoryQuery();
 

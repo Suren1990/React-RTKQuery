@@ -10,7 +10,8 @@ export const storeAPI = createApi({
         getProducts: builder.query<IProduct[], string>({
             query: () => ({
                 url: 'products',
-            })
+            }),
+            providesTags: result => ['products'],
         }),
         getSpecifilteredCategory: builder.query<IProduct[], string>({
             query: (category: string) => ({
@@ -32,7 +33,8 @@ export const storeAPI = createApi({
                 url: `products`,
                 method: "POST",
                 body: product,
-            })
+            }),
+            invalidatesTags: ['products'],
         }),
     })
 })
